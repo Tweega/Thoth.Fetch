@@ -290,3 +290,7 @@ let deleteBook (book : Book) : JS.Promise<unit> =
 ### Keep control over Thoth.Json
 
 When using auto coders, you can pass `caseStrategy` and/or `extra` arguments in order to control `Thoth.Json` behaviour. You can learn more about them by reading `Thoth.Json` [documentation](https://mangelmaxime.github.io/Thoth/json/v3.html).
+
+### Setting Request Headers
+HttpRequestHeader types are defined under Fetch.Types.  If you are getting a 404 error using Saturn plug 'acceptJson',you may need to set the Accept header on the Request, as in
+```Fetch.get(url, headers = [Fetch.Types.Accept "application/json"], decoder = myDecoder)```
